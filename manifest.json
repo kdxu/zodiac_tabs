@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "zodiac_tabs",
+    "version": "0.0.1",
+    "background": {
+      "scripts": ["./src/main.js"],
+      "persistent" : false
+    },
+    "browser_action": {
+      "default_title": "zodiac tabs"
+    },
+    "web_accessible_resources": [
+      "assets/*.ico",
+      "src/*.js"
+    ],
+    "permissions": [
+        "tabs",
+        "*://*/*"
+    ]
+}
