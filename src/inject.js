@@ -1,11 +1,10 @@
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   var href = request.href;
   if(href){
-    var link = document.querySelector('link[rel*="icon"]') || document.querySelector('link[rel*="shortcut icon"]');
-    if (!link) {
-      link = document.createElement("link");
-      document.head.appendChild(link);
-    }
+    var links = document.querySelectorAll('link[rel*="icon"]', 'link[rel*="shortcut icon"]');
+    links.forEach(function(elem){elem.href = "";});
+    var link = document.createElement("link");
+    document.head.appendChild(link);
     link.setAttribute("rel", "shortcut icon");
     function onImageLoaded() {
       var canvas = document.createElement("canvas");
