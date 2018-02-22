@@ -2,9 +2,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === 'complete') {
     setFavicon(tabId, ((href, color) => {
       const err = chrome.runtime.lastError;
-      if (err){
-
-      }else {
+      if(!err){
         chrome.tabs.sendMessage(tabId, {href: href, color: color});
       }}));
   }

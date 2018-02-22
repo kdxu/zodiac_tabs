@@ -4,9 +4,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     var link = document.querySelector('link[rel*="icon"]') || document.querySelector('link[rel*="shortcut icon"]');
     if (!link) {
       link = document.createElement("link");
+      document.head.appendChild(link);
     }
     link.setAttribute("rel", "shortcut icon");
-    document.head.appendChild(link);
     function onImageLoaded() {
       var canvas = document.createElement("canvas");
       canvas.width = 16;
