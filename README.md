@@ -1,6 +1,6 @@
 # zodiac_tabs
 
-Chrome Extention changes favicons to zodiac signs 
+The Chrome Extention changes favicons to zodiac signs 
 
 ---
 
